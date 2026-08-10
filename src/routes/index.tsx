@@ -1,6 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Facebook, Instagram, Linkedin, Twitter, Music2, Mail, Phone, MapPin } from "lucide-react";
 import { Logo } from "@/components/portfolio/Logo";
+import {
+  MetaIcon,
+  GoogleAdsIcon,
+  TikTokIcon,
+  XIcon,
+  PinterestIcon,
+  SnapchatIcon,
+} from "@/components/portfolio/PlatformIcons";
+import theSistersLogo from "@/assets/the-sisters.png.asset.json";
+import gaanaLogo from "@/assets/gaana.jpg.asset.json";
+import dsTravelLogo from "@/assets/ds-travel.jpg.asset.json";
+import angelinaLogo from "@/assets/angelina-shapper.jpg.asset.json";
+import orbisLogo from "@/assets/orbis-creativa.jpg.asset.json";
+import portrait from "@/assets/aroman-portrait.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
