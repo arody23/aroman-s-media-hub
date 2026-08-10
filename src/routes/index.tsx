@@ -245,9 +245,8 @@ function Portfolio() {
                   key={p.name}
                   className="group bg-primary p-8 transition-colors duration-300 hover:bg-primary-foreground/5"
                 >
-                  {/* Emplacement logo plateforme — remplacer par une image si besoin */}
-                  <div className="grid h-12 w-12 shrink-0 place-items-center border border-primary-foreground/25 text-lg font-bold text-accent">
-                    {p.mark}
+                  <div className="grid h-12 w-12 shrink-0 place-items-center border border-primary-foreground/25">
+                    <p.Icon className="h-6 w-6" />
                   </div>
                   <h3 className="mt-6 text-xl font-semibold">{p.name}</h3>
                   <p className="mt-1 text-sm text-primary-foreground/60">{p.detail}</p>
@@ -288,13 +287,13 @@ function Portfolio() {
             <div className="mt-14 grid grid-cols-1 gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
               {collaborations.map((c) => (
                 <article key={c.name} className="bg-background p-8">
-                  {/* Emplacement logo client — remplacer ce bloc par <img src=... /> */}
-                  <div className="grid h-16 w-16 place-items-center border border-border bg-secondary text-lg font-bold tracking-tight text-muted-foreground">
-                    {c.name
-                      .split(" ")
-                      .slice(0, 2)
-                      .map((w) => w[0])
-                      .join("")}
+                  <div className="grid h-16 w-16 place-items-center overflow-hidden border border-border bg-background">
+                    <img
+                      src={c.logo}
+                      alt={`Logo ${c.name}`}
+                      loading="lazy"
+                      className="h-full w-full object-contain"
+                    />
                   </div>
                   <h3 className="mt-6 text-lg font-semibold">{c.name}</h3>
                   <p className="mt-1 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
