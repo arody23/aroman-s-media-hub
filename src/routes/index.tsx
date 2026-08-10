@@ -1,6 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Facebook, Instagram, Linkedin, Twitter, Music2, Mail, Phone, MapPin } from "lucide-react";
 import { Logo } from "@/components/portfolio/Logo";
+import {
+  MetaIcon,
+  GoogleAdsIcon,
+  TikTokIcon,
+  XIcon,
+  PinterestIcon,
+  SnapchatIcon,
+} from "@/components/portfolio/PlatformIcons";
+import theSistersLogo from "@/assets/the-sisters.png.asset.json";
+import gaanaLogo from "@/assets/gaana.jpg.asset.json";
+import dsTravelLogo from "@/assets/ds-travel.jpg.asset.json";
+import angelinaLogo from "@/assets/angelina-shapper.jpg.asset.json";
+import orbisLogo from "@/assets/orbis-creativa.jpg.asset.json";
+import portrait from "@/assets/aroman-portrait.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -9,7 +23,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Portfolio d'Aroman EMETSHU, Media Buyer et Performance Marketer à Brazzaville : stratégie publicitaire, acquisition, optimisation et scaling sur Meta, Google, TikTok, X, Pinterest et Snapchat.",
+          "Portfolio d'Aroman EMETSHU, Media Buyer et Performance Marketer à Kinshasa et Brazzaville : stratégie publicitaire, acquisition, optimisation et scaling sur Meta, Google, TikTok, X, Pinterest et Snapchat.",
       },
       { property: "og:title", content: "Aroman EMETSHU — Media Buyer & Performance Marketing" },
       {
@@ -25,9 +39,9 @@ export const Route = createFileRoute("/")({
 });
 
 const stats = [
-  { value: "5+", label: "ans dans le digital" },
-  { value: "4+", label: "ans en Media Buying" },
-  { value: "50+", label: "projets accompagnés" },
+  { value: "11+", label: "ans dans le digital" },
+  { value: "5+", label: "ans en Media Buying" },
+  { value: "75+", label: "projets accompagnés" },
 ];
 
 const expertise = [
@@ -46,12 +60,12 @@ const expertise = [
 ];
 
 const platforms = [
-  { name: "Meta Ads", detail: "Facebook / Instagram", mark: "M" },
-  { name: "Google Ads", detail: "Search / Display / YouTube", mark: "G" },
-  { name: "TikTok Ads", detail: "Vidéo courte & créatifs natifs", mark: "T" },
-  { name: "X Ads", detail: "Twitter", mark: "X" },
-  { name: "Pinterest Ads", detail: "Découverte & intention visuelle", mark: "P" },
-  { name: "Snapchat Ads", detail: "Audiences jeunes & formats verticaux", mark: "S" },
+  { name: "Meta Ads", detail: "Facebook / Instagram", Icon: MetaIcon },
+  { name: "Google Ads", detail: "Search / Display / YouTube", Icon: GoogleAdsIcon },
+  { name: "TikTok Ads", detail: "Vidéo courte & créatifs natifs", Icon: TikTokIcon },
+  { name: "X Ads", detail: "Twitter", Icon: XIcon },
+  { name: "Pinterest Ads", detail: "Découverte & intention visuelle", Icon: PinterestIcon },
+  { name: "Snapchat Ads", detail: "Audiences jeunes & formats verticaux", Icon: SnapchatIcon },
 ];
 
 const method = [
@@ -62,11 +76,31 @@ const method = [
 ];
 
 const collaborations = [
-  { name: "The Sisters Africa", desc: "Pilotage de campagnes publicitaires et suivi des performances." },
-  { name: "GAANA", desc: "Gestion des campagnes d'acquisition et optimisation des audiences." },
-  { name: "DS Travel", desc: "Campagnes de visibilité et de génération de demandes." },
-  { name: "Angelina Shapper", desc: "Campagnes de vente en ligne, retargeting et scaling." },
-  { name: "Orbis Creative Agency", desc: "Accompagnement média et suivi des campagnes clients." },
+  {
+    name: "The Sisters Africa",
+    logo: theSistersLogo.url,
+    desc: "Pilotage de campagnes publicitaires et suivi des performances.",
+  },
+  {
+    name: "GAANA",
+    logo: gaanaLogo.url,
+    desc: "Gestion des campagnes d'acquisition et optimisation des audiences.",
+  },
+  {
+    name: "DS Travel",
+    logo: dsTravelLogo.url,
+    desc: "Campagnes de visibilité et de génération de demandes.",
+  },
+  {
+    name: "Angelina Shapper",
+    logo: angelinaLogo.url,
+    desc: "Campagnes de vente en ligne, retargeting et scaling.",
+  },
+  {
+    name: "Orbis Creative Agency",
+    logo: orbisLogo.url,
+    desc: "Accompagnement média et suivi des campagnes clients.",
+  },
 ];
 
 const caseMetrics = [
@@ -78,10 +112,15 @@ const caseMetrics = [
 
 const ecosystem = [
   "Meta Ads Manager",
-  "Meta Business Suite",
+  "Google Ads",
+  "TikTok Ads Manager",
+  "Snapchat Ads Manager",
+  "X Ads Manager",
+  "Pinterest Ads",
   "Analytics & Reporting",
   "Audience & Retargeting",
   "Conversion & Acquisition",
+  "E-commerce & Entrepreneurs",
 ];
 
 const socials = [
@@ -206,9 +245,8 @@ function Portfolio() {
                   key={p.name}
                   className="group bg-primary p-8 transition-colors duration-300 hover:bg-primary-foreground/5"
                 >
-                  {/* Emplacement logo plateforme — remplacer par une image si besoin */}
-                  <div className="grid h-12 w-12 shrink-0 place-items-center border border-primary-foreground/25 text-lg font-bold text-accent">
-                    {p.mark}
+                  <div className="grid h-12 w-12 shrink-0 place-items-center border border-primary-foreground/25">
+                    <p.Icon className="h-6 w-6" />
                   </div>
                   <h3 className="mt-6 text-xl font-semibold">{p.name}</h3>
                   <p className="mt-1 text-sm text-primary-foreground/60">{p.detail}</p>
@@ -249,13 +287,13 @@ function Portfolio() {
             <div className="mt-14 grid grid-cols-1 gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
               {collaborations.map((c) => (
                 <article key={c.name} className="bg-background p-8">
-                  {/* Emplacement logo client — remplacer ce bloc par <img src=... /> */}
-                  <div className="grid h-16 w-16 place-items-center border border-border bg-secondary text-lg font-bold tracking-tight text-muted-foreground">
-                    {c.name
-                      .split(" ")
-                      .slice(0, 2)
-                      .map((w) => w[0])
-                      .join("")}
+                  <div className="grid h-16 w-16 place-items-center overflow-hidden border border-border bg-background">
+                    <img
+                      src={c.logo}
+                      alt={`Logo ${c.name}`}
+                      loading="lazy"
+                      className="h-full w-full object-contain"
+                    />
                   </div>
                   <h3 className="mt-6 text-lg font-semibold">{c.name}</h3>
                   <p className="mt-1 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
@@ -310,11 +348,12 @@ function Portfolio() {
         {/* PROFIL FINAL */}
         <section className="border-t border-border">
           <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-[minmax(0,320px)_minmax(0,1fr)] md:px-10 md:py-32">
-            {/* Emplacement photo professionnelle — remplacer par <img src=... alt="Aroman EMETSHU" /> */}
-            <div className="aspect-[4/5] w-full max-w-[320px] border border-border bg-secondary">
-              <div className="grid h-full place-items-center px-6 text-center text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                Photo professionnelle
-              </div>
+            <div className="aspect-[4/5] w-full max-w-[320px] overflow-hidden border border-border bg-secondary">
+              <img
+                src={portrait.url}
+                alt="Aroman EMETSHU, Media Buyer et Performance Marketer"
+                className="h-full w-full object-cover"
+              />
             </div>
             <div className="min-w-0">
               <h2 className="text-3xl font-extrabold tracking-tight md:text-5xl">
@@ -325,8 +364,31 @@ function Portfolio() {
               </p>
               <p className="mt-6 flex items-center gap-2 text-muted-foreground">
                 <MapPin className="h-4 w-4 shrink-0" aria-hidden="true" />
-                Brazzaville, Congo
+                RD Congo · République du Congo
               </p>
+
+              <div className="mt-10 grid gap-8 border-t border-border pt-8 sm:grid-cols-2">
+                <address className="not-italic">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-muted-foreground">
+                    Kinshasa · RDC
+                  </p>
+                  <p className="mt-3 text-base leading-relaxed">
+                    Ngiri-Ngiri, Khartoum
+                    <br />
+                    Avenue Kingabwa N°24, Appart B3
+                  </p>
+                </address>
+                <address className="not-italic">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-muted-foreground">
+                    Brazzaville · République du Congo
+                  </p>
+                  <p className="mt-3 text-base leading-relaxed">
+                    Moungali, Avenue Lagué N°12
+                    <br />
+                    Réf. marché du Franc, Itoumbi
+                  </p>
+                </address>
+              </div>
 
               <dl className="mt-10 space-y-4 border-t border-border pt-8">
                 <div className="flex items-center gap-3">
@@ -338,6 +400,7 @@ function Portfolio() {
                   <dd className="text-base">+242 06 745 8011 · WhatsApp</dd>
                 </div>
               </dl>
+
 
               {/* Emplacements réseaux sociaux — ajouter les URL réelles quand elles seront fournies */}
               <div className="mt-10">
