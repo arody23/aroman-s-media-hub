@@ -39,9 +39,9 @@ export const Route = createFileRoute("/")({
 });
 
 const stats = [
-  { value: "5+", label: "ans dans le digital" },
-  { value: "4+", label: "ans en Media Buying" },
-  { value: "50+", label: "projets accompagnés" },
+  { value: "11+", label: "ans dans le digital" },
+  { value: "5+", label: "ans en Media Buying" },
+  { value: "75+", label: "projets accompagnés" },
 ];
 
 const expertise = [
@@ -60,12 +60,12 @@ const expertise = [
 ];
 
 const platforms = [
-  { name: "Meta Ads", detail: "Facebook / Instagram", mark: "M" },
-  { name: "Google Ads", detail: "Search / Display / YouTube", mark: "G" },
-  { name: "TikTok Ads", detail: "Vidéo courte & créatifs natifs", mark: "T" },
-  { name: "X Ads", detail: "Twitter", mark: "X" },
-  { name: "Pinterest Ads", detail: "Découverte & intention visuelle", mark: "P" },
-  { name: "Snapchat Ads", detail: "Audiences jeunes & formats verticaux", mark: "S" },
+  { name: "Meta Ads", detail: "Facebook / Instagram", Icon: MetaIcon },
+  { name: "Google Ads", detail: "Search / Display / YouTube", Icon: GoogleAdsIcon },
+  { name: "TikTok Ads", detail: "Vidéo courte & créatifs natifs", Icon: TikTokIcon },
+  { name: "X Ads", detail: "Twitter", Icon: XIcon },
+  { name: "Pinterest Ads", detail: "Découverte & intention visuelle", Icon: PinterestIcon },
+  { name: "Snapchat Ads", detail: "Audiences jeunes & formats verticaux", Icon: SnapchatIcon },
 ];
 
 const method = [
@@ -76,11 +76,31 @@ const method = [
 ];
 
 const collaborations = [
-  { name: "The Sisters Africa", desc: "Pilotage de campagnes publicitaires et suivi des performances." },
-  { name: "GAANA", desc: "Gestion des campagnes d'acquisition et optimisation des audiences." },
-  { name: "DS Travel", desc: "Campagnes de visibilité et de génération de demandes." },
-  { name: "Angelina Shapper", desc: "Campagnes de vente en ligne, retargeting et scaling." },
-  { name: "Orbis Creative Agency", desc: "Accompagnement média et suivi des campagnes clients." },
+  {
+    name: "The Sisters Africa",
+    logo: theSistersLogo.url,
+    desc: "Pilotage de campagnes publicitaires et suivi des performances.",
+  },
+  {
+    name: "GAANA",
+    logo: gaanaLogo.url,
+    desc: "Gestion des campagnes d'acquisition et optimisation des audiences.",
+  },
+  {
+    name: "DS Travel",
+    logo: dsTravelLogo.url,
+    desc: "Campagnes de visibilité et de génération de demandes.",
+  },
+  {
+    name: "Angelina Shapper",
+    logo: angelinaLogo.url,
+    desc: "Campagnes de vente en ligne, retargeting et scaling.",
+  },
+  {
+    name: "Orbis Creative Agency",
+    logo: orbisLogo.url,
+    desc: "Accompagnement média et suivi des campagnes clients.",
+  },
 ];
 
 const caseMetrics = [
@@ -92,10 +112,15 @@ const caseMetrics = [
 
 const ecosystem = [
   "Meta Ads Manager",
-  "Meta Business Suite",
+  "Google Ads",
+  "TikTok Ads Manager",
+  "Snapchat Ads Manager",
+  "X Ads Manager",
+  "Pinterest Ads",
   "Analytics & Reporting",
   "Audience & Retargeting",
   "Conversion & Acquisition",
+  "E-commerce & Entrepreneurs",
 ];
 
 const socials = [
