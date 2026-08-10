@@ -23,7 +23,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Portfolio d'Aroman EMETSHU, Media Buyer et Performance Marketer à Brazzaville : stratégie publicitaire, acquisition, optimisation et scaling sur Meta, Google, TikTok, X, Pinterest et Snapchat.",
+          "Portfolio d'Aroman EMETSHU, Media Buyer et Performance Marketer à Kinshasa et Brazzaville : stratégie publicitaire, acquisition, optimisation et scaling sur Meta, Google, TikTok, X, Pinterest et Snapchat.",
       },
       { property: "og:title", content: "Aroman EMETSHU — Media Buyer & Performance Marketing" },
       {
