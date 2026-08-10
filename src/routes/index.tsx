@@ -348,11 +348,12 @@ function Portfolio() {
         {/* PROFIL FINAL */}
         <section className="border-t border-border">
           <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-[minmax(0,320px)_minmax(0,1fr)] md:px-10 md:py-32">
-            {/* Emplacement photo professionnelle — remplacer par <img src=... alt="Aroman EMETSHU" /> */}
-            <div className="aspect-[4/5] w-full max-w-[320px] border border-border bg-secondary">
-              <div className="grid h-full place-items-center px-6 text-center text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                Photo professionnelle
-              </div>
+            <div className="aspect-[4/5] w-full max-w-[320px] overflow-hidden border border-border bg-secondary">
+              <img
+                src={portrait.url}
+                alt="Aroman EMETSHU, Media Buyer et Performance Marketer"
+                className="h-full w-full object-cover"
+              />
             </div>
             <div className="min-w-0">
               <h2 className="text-3xl font-extrabold tracking-tight md:text-5xl">
@@ -363,8 +364,31 @@ function Portfolio() {
               </p>
               <p className="mt-6 flex items-center gap-2 text-muted-foreground">
                 <MapPin className="h-4 w-4 shrink-0" aria-hidden="true" />
-                Brazzaville, Congo
+                RD Congo · République du Congo
               </p>
+
+              <div className="mt-10 grid gap-8 border-t border-border pt-8 sm:grid-cols-2">
+                <address className="not-italic">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-muted-foreground">
+                    Kinshasa · RDC
+                  </p>
+                  <p className="mt-3 text-base leading-relaxed">
+                    Ngiri-Ngiri, Khartoum
+                    <br />
+                    Avenue Kingabwa N°24, Appart B3
+                  </p>
+                </address>
+                <address className="not-italic">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-muted-foreground">
+                    Brazzaville · République du Congo
+                  </p>
+                  <p className="mt-3 text-base leading-relaxed">
+                    Moungali, Avenue Lagué N°12
+                    <br />
+                    Réf. marché du Franc, Itoumbi
+                  </p>
+                </address>
+              </div>
 
               <dl className="mt-10 space-y-4 border-t border-border pt-8">
                 <div className="flex items-center gap-3">
@@ -376,6 +400,7 @@ function Portfolio() {
                   <dd className="text-base">+242 06 745 8011 · WhatsApp</dd>
                 </div>
               </dl>
+
 
               {/* Emplacements réseaux sociaux — ajouter les URL réelles quand elles seront fournies */}
               <div className="mt-10">
